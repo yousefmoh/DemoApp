@@ -1,0 +1,34 @@
+﻿@model IEnumerable<WebApplication3.Models.StdClass>
+
+@{
+    ViewBag.Title = "Classes App";
+}
+
+<h2>Classes Page</h2>
+
+<p>
+    @Html.ActionLink("Create New Class", "Create")
+</p>
+<table class="table table-hover table-info table-striped table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ClassName)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClassName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ClassId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ClassId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ClassId })
+            </td>
+        </tr>
+    }
+
+</table>
